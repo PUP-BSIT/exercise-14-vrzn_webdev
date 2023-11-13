@@ -261,7 +261,9 @@ ul li a:hover {
   border-radius: 10px;
 }
 
-.comment-card {
+.sort-option,
+.comment-card,
+.comment-form {
   margin: 1rem 4rem;
 }
 

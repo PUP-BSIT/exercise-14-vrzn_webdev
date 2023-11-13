@@ -293,9 +293,19 @@
     </section>
 
     <h1 class="heading-two" id="comments">Comment Section</h1>
+    <div class="sort-option">
+      <label for="sort_option">Sort comments:</label>
+      <select id="sort_option" onchange="sortComments()">
+        <option value="oldest">Oldest to Newest</option>
+        <option value="newest">Newest to Oldest</option>
+      </select>
+    </div>
+    
     <section class="comment-card">
       <div class="comment-info">
-        <p class="name">Jhean Khendrick C. Galope</p>
+        <p class="name">
+          Jhean Khendrick C. Galope - November 11, 2023 , 12:30 PM
+        </p>
 
         <p class="comment">
           Nice goals broski! I hope u achieve all of them! Goodluck!
@@ -303,12 +313,12 @@
       </div>
 
       <div class="comment-info">
-        <p class="name">Andronicus</p>
+        <p class="name">Andronicus - November 12, 2023 , 11:20 PM </p>
         <p class="comment">Wow, your goals are truly amazing to know.</p>
       </div>
 
       <div class="comment-info">
-        <p class="name">Adrian Naoe</p>
+        <p class="name">Adrian Naoe - November 12, 2023 , 11:30 PM</p>
         <p class="comment">
           Website looks clean the use of cool icons and color are to the next
           level!
@@ -316,31 +326,31 @@
       </div>
 
       <div class="comment-info">
-        <p class="name">Mark Ryan Odrunia</p>
+        <p class="name">Mark Ryan Odrunia - November 13, 2023 , 1:00 PM</p>
         <p class="comment">
           Great goals! hoping you achieve all of them someday!
         </p>
       </div>
-
-      <form>
-        <div class="comment-form">
-          <input
-            type="text"
-            name="username"
-            id="username"
-            placeholder="Tell us who you are"
-          />
-
-          <textarea
-            name="comment"
-            id="input_comment"
-            placeholder="Tell us your thoughts"
-          ></textarea>
-
-          <button type="button" class="comment-btn" disabled>Comment</button>
-        </div>
-      </form>
     </section>
+
+    <form>
+      <div class="comment-form">
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Tell us who you are"
+        />
+
+        <textarea
+          name="comment"
+          id="input_comment"
+          placeholder="Tell us your thoughts"
+        ></textarea>
+
+        <button type="button" class="comment-btn" disabled>Comment</button>
+      </div>
+    </form>
 
     <script src="main.js"></script>
   </body>
