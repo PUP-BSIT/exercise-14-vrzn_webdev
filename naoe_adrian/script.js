@@ -2,7 +2,7 @@ const commentSection = [
   { 
     name: "Odrunia, Mark", 
     comment: `Great goals, hoping you achieve all of them someday!`, 
-    dateTime: "10/22/2023 7:51:02 PM" 
+    dateTime: "10/22/2023 8:40:02 PM" 
   },
   { 
     name: "Dimasacat, Andronicus", 
@@ -14,13 +14,13 @@ const commentSection = [
     name: "Go, Harrel C", 
     comment: `More jams to come before we finish our degree. 
               Good luck on your journey!`, 
-    dateTime: "10/23/2023 3:51:02 PM" 
+    dateTime: "10/23/2023 3:51:02 AM" 
   },
   { 
     name: "Galope, Jhean Khendrick", 
     comment: `Nice work broski! Keep it up, 
               and you'll be where you dream of in no time.`, 
-    dateTime: "10/22/2022 6:51:02 AM" 
+    dateTime: "10/22/2023 6:51:02 AM" 
   }
 ];
 
