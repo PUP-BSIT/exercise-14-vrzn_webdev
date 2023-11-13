@@ -219,6 +219,21 @@ div.goals-style {
     margin: 10px 0;
 }
 
+#sort_button {
+    background-color: #0074cc;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid #4169E1;
+    margin-top: 10px;
+}
+
+#sort_button:hover {
+    background-color: #0056a4;
+}
+
 .comment-input-style {
     display: flex;  
     flex-direction: column;
@@ -239,11 +254,11 @@ div.goals-style {
     margin: 15px;
 }
 
-#input_name{
+#input_name {
     width: 125px;
 }
 
-#input_comment{
+#input_comment {
     width: 200px;
     height: 100px;
 }
