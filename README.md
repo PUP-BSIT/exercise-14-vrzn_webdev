@@ -9,7 +9,6 @@
 ### Explore our website on:
 
 [![Netlify](https://img.shields.io/badge/Netlify-Visit-brightgreen?style=for-the-badge&logo=netlify)](https://vrzn.netlify.app/)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Visit-blue?style=for-the-badge&logo=github)](https://pup-bsit.github.io/exercise-12-vrzn_webdev/)
 
 </div>
 
