@@ -1,34 +1,33 @@
-let usernameInput = document.querySelector("#username");
-let commentInput = document.querySelector("#input_comment");
-let commentButton = document.querySelector(".comment-btn");
-let commentSection = document.querySelector(".comment-card");
+const usernameInput = document.querySelector("#username");
+const commentInput = document.querySelector("#input_comment");
+const commentButton = document.querySelector(".comment-btn");
+const commentSection = document.querySelector(".comment-card");
 
 usernameInput.addEventListener("input", toggleButtonState);
 commentInput.addEventListener("input", toggleButtonState);
 
 function toggleButtonState() {
-  let isInputValid =
-    usernameInput.value.trim() !== "" && commentInput.value.trim() !== "";
+  const isInputValid = usernameInput.value.trim() && commentInput.value.trim();
   commentButton.classList.toggle("active", isInputValid);
   commentButton.disabled = !isInputValid;
 }
 
 commentButton.addEventListener("click", () => {
-  let username = usernameInput.value.trim();
-  let commentText = commentInput.value.trim();
+  const username = usernameInput.value.trim();
+  const commentText = commentInput.value.trim();
 
-  if (username && commentText) {
-    let newComment = document.createElement("div");
-    newComment.classList.add("comment-info");
-    newComment.innerHTML = `
-      <p class="name">${username}</p>
-      <p class="comment">${commentText}</p>
-    `;
+  if (!(username && commentText)) return;
 
-    commentSection.insertBefore(newComment, commentSection.lastElementChild);
+  const newComment = document.createElement("div");
+  newComment.classList.add("comment-info");
+  newComment.innerHTML = `
+    <p class="name">${username}</p>
+    <p class="comment">${commentText}</p>
+  `;
 
-    usernameInput.value = "";
-    commentInput.value = "";
-    toggleButtonState();
-  }
+  commentSection.insertBefore(newComment, commentSection.lastElementChild);
+
+  usernameInput.value = "";
+  commentInput.value = "";
+  toggleButtonState();
 });
