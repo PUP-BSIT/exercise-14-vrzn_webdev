@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+*{
+  font-family: "Poppins", sans-serif;
+}
+
 .profile-body {
   margin: 25px;
 }
@@ -37,7 +41,6 @@
 .location-name,
 .description {
   text-align: center;
-  font-family: "Poppins", sans-serif;
   padding: 0;
   margin: 1px;
 }
@@ -80,7 +83,6 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
   background-color: #121212;
   color: #ffffff;
 }
@@ -367,50 +369,39 @@ div h2 {
   margin-bottom: 10px;
 }
 
-.comment-section {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-left: 20px;
-  width: auto;
-  margin: 20px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.comment {
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-}
-
-.comment p {
-  margin: 0;
+.comments_dynamic {
+  margin-top: 20px;
   margin-bottom: 20px;
+  padding: 20px;
+  border: white solid;
+  border-radius: 10px;
+  background-color: #282828;
+  color: white;
 }
 
-.comment-input {
-  border-radius: 5px;
+#comment_form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #282828;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.comment-input h3 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.comment-input input,
-.comment-input textarea {
-  font-family: "Poppins", Courier, monospace;
-  width: 94%;
+#name,
+#comment {
+  color: black;
+  width: 100%;
   padding: 10px;
   margin: 5px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
+  box-sizing: border-box;
 }
 
-.comment-input button {
+#add_comment_btn {
+  width: 100%;
   background-color: rgb(17, 147, 17);
-  font-family: "Poppins", Courier, monospace;
   color: white;
   border: none;
   border-radius: 5px;
@@ -418,10 +409,46 @@ div h2 {
   cursor: pointer;
 }
 
-.comment-input button:disabled {
+#add_comment_btn:disabled {
+  cursor: not-allowed;
   background-color: #ccc;
 }
 
-.comment-input button:enabled {
+#add_comment_btn:enabled {
   background-color: #00a53a;
+}
+
+#sort_option {
+  margin-top: 10px;
+}
+
+#sort {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+#sort:hover {
+  cursor: pointer;
+}
+
+#sort option {
+  background-color: #282828;
+  color: white;
+}
+
+#sort_select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+@media (max-width: 600px) {
+  #comment_form,
+  .comment_section,
+  .comment_input {
+    max-width: 100%;
+  }
 }

@@ -366,61 +366,31 @@
          </div>
       </div>
       <section>
-        <div class="comment-section">
-          <h2>Comments</h2>
-          <div class="comment">
-            <p>
-              <strong>Go, Christian Harrel</strong> - 10/23/2023
-            </p>
-            <p>
-              <em>
-                More jams to come before we finish our degree. 
-                Good luck on your journey!
-             </em>
-            </p>
-            <p>
-              <strong>Dimasacat, Andronicus</strong> - 10/22/2023
-            </p>
-            <p>
-              <em>
-                I like how your goals will change your future 
-                and influence others.
-             </em>
-            </p>
-            <p>
-              <strong>Galope, Jhean Khendrick</strong> - 10/22/2023
-            </p>
-            <p>
-              <em>
-                Nice work broski! Keep it up, and you'll 
-                be where you dream of in no time.
-             </em>
-            </p>
-            <p>
-              <strong>Odrunia, Mark</strong> - 10/22/2023
-            </p>
-            <p>
-              <em>
-                Great goals, hoping you achieve 
-                all of them someday!
-             </em>
-            </p>
-            <div id="new_comments"></div>
-          </div>
-          <div class="comment-input">
-            <h3>Add a Comment</h3>
-            <label for="author">Name</label>
-            <input 
-                type="text" 
-                id="author" 
-                placeholder="Enter Your Name">
-            <label for="comment_text">Comment</label>
-            <textarea 
-                id="comment_text" 
-                placeholder="Your Comment"></textarea>
-            <button id="submit_comment" disabled>Add Comment</button>
-          </div>
-        </div>
+         <div id="comment_form">
+            <h1>COMMENTS</h1>
+            <div id="comments_dynamic"></div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter Your Name" />
+            <label for="comment">Comment:</label>
+            <textarea
+               id="comment"
+               rows="4"
+               placeholder="What's on your mind?"
+               required
+               ></textarea>
+            <button id="add_comment_btn" onclick="addComment()" disabled>
+            Add Comment
+            </button>
+            <p id="error-message"></p>
+            <div id="sort_option">
+               <label for="sort"></label>
+               <select id="sort" onchange="sortComments()">
+                  <option value="initial">Sort Initially</option>
+                  <option value="newest">New to Old</option>
+                  <option value="oldest">Old to New</option>
+               </select>
+            </div>
+         </div>
       <script src="./script.js"></script>
    </body>
 </html>
