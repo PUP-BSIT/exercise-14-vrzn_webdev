@@ -88,7 +88,9 @@ function commentForm() {
       timestamp: timestamp,
     });
 
-    commentsArray.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+    commentsArray.sort((a, b) => 
+      new Date(a.timestamp) - new Date(b.timestamp)
+    );
 
     updateComments();
 
@@ -98,9 +100,13 @@ function commentForm() {
   }
 }
   
-document.querySelector("#comment_button").addEventListener("click", commentForm);
-document.querySelector("#sort_button").addEventListener("click", () => {
+document.querySelector("#comment_button")
+  .addEventListener("click", commentForm);
+
+document.querySelector("#sort_button")
+  .addEventListener("click", () => {
   commentsArray.reverse();
+  
   updateComments(); 
 });
   
