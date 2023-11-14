@@ -32,77 +32,77 @@ let commentsArray = [
   },
 ];
 
-  function commentButton() {
-    let name = document.querySelector("#full_name");
-    let txtarea = document.querySelector("#story");
-    let commentButton = document.querySelector("#comment_button");
-  
-    if (name.value.trim().length && txtarea.value.trim().length) {
-      commentButton.disabled = false;
-    } else {
-      commentButton.disabled = true;
-    }
+function commentButton() {
+  let name = document.querySelector("#full_name");
+  let txtarea = document.querySelector("#story");
+  let commentButton = document.querySelector("#comment_button");
+
+  if (name.value.trim().length && txtarea.value.trim().length) {
+    commentButton.disabled = false;
+  } else {
+    commentButton.disabled = true;
   }
-  
-  function createCommentElement(comment) {
-    let commentElement = document.createElement("p");
-    commentElement.innerHTML = `
-      <b>${comment.user}</b> (${comment.timestamp})
-      <p><em>${comment.text}</em></p>`;
-    return commentElement;
-  }
-  
-  function updateComments() {
-    let content = document.querySelector(".comments");
-  
-    content.innerHTML = "";
-    commentsArray.forEach((comment) => {
-      content.appendChild(createCommentElement(comment));
-    });
-  
-    let sortButton = document.createElement("button");
-    sortButton.id = "sortButton";
-    sortButton.textContent = "Sort by dates";
-    sortButton.addEventListener("click", () => {
-      commentsArray.reverse();
-      updateComments(); 
-    });
-  
-    content.appendChild(sortButton);
-  }
-  
-  function commentForm() {
-    let author = document.querySelector("#full_name");
-    let text = document.querySelector("#story");
-    let submit = document.querySelector("#comment_button");
-  
-    let user = author.value;
-    let newtext = text.value;
-  
-    if (user && newtext) {
-      let timestamp = new Date().toLocaleString();
-  
-      commentsArray.push({
-        user: user,
-        text: newtext,
-        timestamp: timestamp,
-      });
-  
-      commentsArray.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
-  
-      updateComments();
-  
-      author.value = "";
-      text.value = "";
-      submit.disabled = true;
-    }
-  }
-  
-  document.querySelector("#comment_button").addEventListener("click", commentForm);
-  document.querySelector("#sortButton").addEventListener("click", () => {
+}
+
+function createCommentElement(comment) {
+  let commentElement = document.createElement("p");
+  commentElement.innerHTML = `
+    <b>${comment.user}</b> (${comment.timestamp})
+    <p><em>${comment.text}</em></p>`;
+  return commentElement;
+}
+
+function updateComments() {
+  let content = document.querySelector(".comments");
+
+  content.innerHTML = "";
+  commentsArray.forEach((comment) => {
+    content.appendChild(createCommentElement(comment));
+  });
+
+  let sortButton = document.createElement("button");
+  sortButton.id = "sort_button";
+  sortButton.textContent = "Sort by dates";
+  sortButton.addEventListener("click", () => {
     commentsArray.reverse();
     updateComments(); 
   });
+
+  content.appendChild(sortButton);
+}
   
-  updateComments();
+function commentForm() {
+  let author = document.querySelector("#full_name");
+  let text = document.querySelector("#story");
+  let submit = document.querySelector("#comment_button");
+
+  let user = author.value;
+  let newtext = text.value;
+
+  if (user && newtext) {
+    let timestamp = new Date().toLocaleString();
+
+    commentsArray.push({
+      user: user,
+      text: newtext,
+      timestamp: timestamp,
+    });
+
+    commentsArray.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+
+    updateComments();
+
+    author.value = "";
+    text.value = "";
+    submit.disabled = true;
+  }
+}
+  
+document.querySelector("#comment_button").addEventListener("click", commentForm);
+document.querySelector("#sort_button").addEventListener("click", () => {
+  commentsArray.reverse();
+  updateComments(); 
+});
+  
+updateComments();
   
